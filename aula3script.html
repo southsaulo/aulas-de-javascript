@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aula3</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <p>menu1</p>
+      <p>menu2</p>
+      <p>menu3</p>
+    </nav>
+  </header>
+  <main>
+    <h2 id="titulo">aula3 javascript DOM</h2>
+    <p class="comandos">getElementById</p>
+    <p class="comandos">getElementsByTagName</p>
+    <p class="comandos">getElementsByClassName</p>
+    <p>comandos para pegar os elementos</p>
+  </main>
+  <div>
+    <p id="ex1">1- alterar o texto do "menu1" para item1</p>
+    <p id="ex2">2- altere o texto do "menu2" para "item2" atraves da tag</p>
+    <button onclick="butao()">altere o item 3</button>
+  </div>
+  <script>
+    document.getElementsByTagName('p')[0].innerHTML = 'item 1';
+    document.getElementsByTagName('p')[1].innerHTML = 'item 2';
+    function butao(){
+    document.getElementsByTagName('p')[2].innerHTML = 'item 3';  
+    }
+
+  </script>
+</body>
+</html>
