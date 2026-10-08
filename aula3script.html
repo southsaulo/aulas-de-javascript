@@ -23,15 +23,46 @@
   <div>
     <p id="ex1">1- alterar o texto do "menu1" para item1</p>
     <p id="ex2">2- altere o texto do "menu2" para "item2" atraves da tag</p>
-    <button onclick="butao()">altere o item 3</button>
+    <p id="ex3">3- inserir parenteses () nos comandos da classe "comandos"</p>
+    <p id="ex4">4- alterar cor do id do "exr1", do segundo item da classe para verde </p>
+    <p id="ex5">5- colocar uma borda na div com o querySelector</p>
+    <p id="ex6">6- alterar o ex1 para ficar maior</p>
+    <p id="ex7">7- alterar  para negrito texto da 1 classe de comandos usando query</p>
+    <p id="ex8">8- alterar a div arredondar as bordas cor de fundo rosa cor do texto branca</p>
+    <p id="ex9">9- alteerar o item 1 & 2 para variaveis</p>
+    <p id="ex10">10- criar button para para ocultar div e mostra</p>
+    <button onclick="butao()">esconde div</button>
+     <button onclick="butao2()">mostre div</button>
   </div>
   <script>
-    document.getElementsByTagName('p')[0].innerHTML = 'item 1';
-    document.getElementsByTagName('p')[1].innerHTML = 'item 2';
+    let item1and2 = document.getElementsByTagName('p') 
+    item1and2[0].innerHTML = 'item 1';
+    item1and2[1].innerHTML = 'item 2';
+    document.getElementsByClassName('comandos')[0].innerHTML = document.getElementsByClassName('comandos')[0].innerHTML + '()' 
+     document.getElementsByClassName('comandos')[1].innerHTML = document.getElementsByClassName('comandos')[1].innerHTML + '()'
+      document.getElementsByClassName('comandos')[2].innerHTML = document.getElementsByClassName('comandos')[2].innerHTML + '()'  
+      document.getElementById('ex1').style.color = 'green'
+      document.getElementsByClassName('comandos')[1].style.color = 'green'
     function butao(){
     document.getElementsByTagName('p')[2].innerHTML = 'item 3';  
     }
-
+     
+    document.querySelector('div').style.border = '2px solid purple';
+    document.querySelector('#ex1').style.fontSize = '35px';
+     document.querySelector('.comandos').style.fontWeight = 'bold';
+     //isso 
+    document.querySelector('div').style.borderTopLeftRadius = '15%';
+    document.querySelector('div').style.borderBottomLeftRadius = '15%';
+    document.querySelector('div').style.borderTopRightRadius = '15%';
+    document.querySelector('div').style.borderBottomRightRadius = '15%';
+    document.querySelector('div').style.backgroundColor= 'pink';
+    document.querySelector('div').style.color = 'magenta';
+     //document.querySelector('div').style.borderRadius ='25%';
+    //ou
+   //let div = document.querySelector("div").style;
+    //div.borderRadius = "30px";
+   //div.backgroundColor = "lightpink";
+    //div.color = "red";
   </script>
 </body>
 </html>
