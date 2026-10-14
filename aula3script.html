@@ -6,7 +6,19 @@
   <title>aula3</title>
 </head>
 <body>
+  <style>
+    .contador p{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: green;
+      border: 1px solid;
+      font-size: 22px;
+      padding: 10px;
+    }
+  </style>
   <header>
+  
     <nav>
       <p>menu1</p>
       <p>menu2</p>
@@ -31,10 +43,17 @@
     <p id="ex8">8- alterar a div arredondar as bordas cor de fundo rosa cor do texto branca</p>
     <p id="ex9">9- alteerar o item 1 & 2 para variaveis</p>
     <p id="ex10">10- criar button para para ocultar div e mostra</p>
-    <button onclick="butao()">esconde div</button>
-     <button onclick="butao2()">mostre div</button>
+    <p id="ex11">11- inserir um evento para quando passar o mouse por cima tenha uma borda e cor de fundo no "aula 3 javascript" e quando sair voltar a normal</p>
+    <p id="ex12">12 -criar contador de visitas para website</p>
   </div>
+  <div class="contador">
+    <p class="contador">0</p>
+  </div>
+  <button onclick="butao()">esconde div</button>
+     <button onclick="butao2()">mostre div</button>
   <script>
+    let div2 = document.getElementsByTagName('div')[0].innerHTML ;
+
     let item1and2 = document.getElementsByTagName('p') 
     item1and2[0].innerHTML = 'item 1';
     item1and2[1].innerHTML = 'item 2';
@@ -44,19 +63,35 @@
       document.getElementById('ex1').style.color = 'green'
       document.getElementsByClassName('comandos')[1].style.color = 'green'
     function butao(){
-    document.getElementsByTagName('p')[2].innerHTML = 'item 3';  
+    document.getElementsByTagName('div')[0].innerHTML = ' ';
     }
-     
+     function butao2(){
+    document.getElementsByTagName('div')[0].innerHTML = div2 ;
+    }
     document.querySelector('div').style.border = '2px solid purple';
     document.querySelector('#ex1').style.fontSize = '35px';
      document.querySelector('.comandos').style.fontWeight = 'bold';
-     //isso 
     document.querySelector('div').style.borderTopLeftRadius = '15%';
     document.querySelector('div').style.borderBottomLeftRadius = '15%';
     document.querySelector('div').style.borderTopRightRadius = '15%';
     document.querySelector('div').style.borderBottomRightRadius = '15%';
     document.querySelector('div').style.backgroundColor= 'pink';
     document.querySelector('div').style.color = 'magenta';
+
+    const texto = document.querySelectorAll("#titulo")[0];
+    texto.addEventListener("mouseover", function(){
+        texto.style.border = "2px dashed red";
+        texto.style.backgroundColor = "green";
+    });
+    texto.addEventListener("mouseout", function(){
+        texto.style.border = "none";
+        texto.style.backgroundColor = "white";
+    });
+    
+     let contador = document.querySelectorAll(".contador")[1].innerHTML;
+    contador++;
+    console.log(contador);
+    document.querySelectorAll(".contador")[1].innerHTML = contador;
      //document.querySelector('div').style.borderRadius ='25%';
     //ou
    //let div = document.querySelector("div").style;
