@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+  <h3 style="background-color: green;">insira texto na caixinha!</h3>
+  <input type="text" id="texto">
+  <button onclick="add();">add</button>
+
+
+
+<script>
+function add(){
+  const divnova = document.createElement('div');
+  const h2Nova = document.createElement('h2');
+  const texto = document.getElementById('texto').value;
+  h2Nova.innerHTML = texto;
+  divnova.appendChild(h2Nova);
+  divnova.style.border = '2px dotted red';
+  document.body.appendChild(divnova);
+}
+
+
+</script>
+</body>
+</html>
