@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+  <h1>bem vindo ao site legal</h1>
+  <button>ocultar</button>
+<script>
+const msg = document.getElementsByTagName('h1')[0];
+const b = document.querySelector('button');
+b.addEventListener('click',function(){
+  if(msg.style.display === 'none'){
+    msg.style.display = "block";
+    b.textContent = "ocultar";
+  }else{
+    msg.style.display = "none";
+    b.textContent = "mostrar"
+  }
+})
+
+</script>
+</body>
+</html>

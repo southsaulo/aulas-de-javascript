@@ -24,6 +24,12 @@ function add(){
   divnova.appendChild(h2Nova);
   divnova.style.border = '2px dotted red';
   document.body.appendChild(divnova);
+  const btremover = document.createElement('button');
+  btremover.innerHTML = 'remover';
+  btremover.addEventListener('click', function(){
+    divnova.remove();
+  })
+  divnova.appendChild(btremover);
 }
 
 
