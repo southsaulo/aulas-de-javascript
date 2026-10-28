@@ -11,22 +11,30 @@
   <button id="amp">ampliar</button> 
   <button id="redu">reduzir</button>
   <br>
-  <h3>tamanho <span>200</span></h3>
+  <h3>tamanho <span id="tam">200</span></h3>
   <script>
     let imagem = document.querySelector('#imagem');
     imagem.style.border = '2px dotted red'
     const ampliar = document.querySelector('#amp');
      const reduz = document.querySelector('#redu');
-     let sp = document.getElementsByTagName('span')[0];
-     sp.innerHTML = imagem.width;
+     let sp = document.getElementById('tam');
     ampliar.addEventListener('click', function(){
     if(imagem.width <= 770)
     imagem.width = imagem.width + 30;
+  sp.innerHTML = imagem.width;
     })
     reduz.addEventListener('click', function(){
     if(imagem.width >= 230)
     imagem.width = imagem.width - 30;
+  sp.innerHTML = imagem.width;
     })
+    let noir = document.createElement('button');
+    noir.textContent = 'redefinir';
+    document.body.appendChild(noir);
+     noir.addEventListener('click', function(){
+     imagem.width = 200;
+  sp.innerHTML = imagem.width;
+     })
   </script>
 </body>
 </html>
