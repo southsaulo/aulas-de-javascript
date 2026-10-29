@@ -6,47 +6,52 @@
   <title>Document</title>
 </head>
 <body>
-  <h2>contatos</h2>
-  <input id="nome" placeholder="nome">
-  <input placeholder="telefone" id="telefone">
-  <button id="cadastrar">cadastrar</button>
-   <ul id="lista">
-    
-   </ul>
-   
+  <h2>Contatos</h2>
+  <input id="nome" type="text" placeholder="Nome">
+  <input id="telefone" type="text" placeholder="Telefone">
+  <button id="cadastrar">Cadastrar</button>
+  <ul id="lista"></ul>
 
-   <script>
-   let contatos = [];
-   const nome = document.querySelector('#nome');
-   const telefone = document.getElementById('telefone');
-   const lista = document.getElementsByTagName('ul')[0];
-   const botao = document.getElementById('cadastrar');
-    let contato = {
-      nome: nome.value,
-      telefone: telefone.value
-    };
-   botao.addEventListener('click', cadastrarContato())
+  <script>
+    let contatos = [];
+    const nome = document.querySelector("#nome");
+    const telefone = document.getElementById("telefone");
+    const lista  = document.getElementById("lista");
+    const botao = document.getElementById("cadastrar");
+      // let contato = {
+      //   nome: nome.value,
+      //   telefone: telefone.value
+      // };
+    botao.addEventListener("click", cadastrarContato);
 
-   function cadastrarContato(){
-    if (nome=== '' || telefone === ''){
-      alert('preencha os campos');
-      return;
+    function cadastrarContato(){
+      let n=nome.value;
+      let t = telefone.value;
+      if(n === "" || t === ""){
+        alert("Preencha os campos!");
+        return;
+      }
+      let contato = {
+        nome: n,
+        telefone: t
+      };
+      
+      contatos.push(contato);
+      
+      mostrarContatos();
+      nome.value = "";
+      telefone.value = "";
     }
-   contato = {
-      nome: nome.value,
-      telefone: telefone.value
-    };
-  
-    contatos.push(contato);
+    function mostrarContatos(){
+      lista.innerHTML = "";
+      contatos.forEach(function(contato){
+      let item = document.createElement("li");
+      item.textContent = contato.nome + " - " + contato.telefone;
+      lista.appendChild(item);
+      });
+    }
     
-    mostrarcontatos()
-   }
-   function mostrarcontatos(){
-   let item = document.createElement('li');
-   item.textContent = contato.nome+'-'+contato.telefone;
-   lista.appendChild(item);
-   }
-   
-   </script>
+    
+  </script>
 </body>
 </html>
